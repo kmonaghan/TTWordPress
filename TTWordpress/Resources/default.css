@@ -1,0 +1,11 @@
+#title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.post object, .post embed, .post video, .post iframe {
+    height: auto;
+    max-height: 280px;
+    width: 100% !important;
+}

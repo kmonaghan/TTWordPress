@@ -1,0 +1,965 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3201088596B4756681693705 /* libThree20UICommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3201088596B4756681693704 /* libThree20UICommon.a */; };
+		3206A0F794A6D7A3F259DBF5 /* libextThree20JSON+SBJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3206A0F794A6D7A3F259DBF4 /* libextThree20JSON+SBJSON.a */; };
+		320A2827FEC940B25BC42C65 /* libThree20Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320A2827FEC940B25BC42C64 /* libThree20Core.a */; };
+		320A5A189C235877202780D5 /* libThree20Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320A5A189C235877202780D4 /* libThree20Network.a */; };
+		320A737074758E53BA54BE95 /* libThree20UINavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320A737074758E53BA54BE94 /* libThree20UINavigator.a */; };
+		320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320AF8492C47A4D819F7C450 /* QuartzCore.framework */; };
+		320B6C86F11D9990244A9731 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 320B6C86F11D9990244A9730 /* Three20.bundle */; };
+		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
+		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
+		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		CB23B281139D0F600036E433 /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = CB23B280139D0F600036E433 /* default.css */; };
+		CB38A00A139958FF00B88AE2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB38A009139958FF00B88AE2 /* UIKit.framework */; };
+		CB38A00C139958FF00B88AE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB38A00B139958FF00B88AE2 /* Foundation.framework */; };
+		CB38A00E139958FF00B88AE2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB38A00D139958FF00B88AE2 /* CoreGraphics.framework */; };
+		CB38A014139958FF00B88AE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB38A012139958FF00B88AE2 /* InfoPlist.strings */; };
+		CB38A017139958FF00B88AE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A016139958FF00B88AE2 /* main.m */; };
+		CB38A01A139958FF00B88AE2 /* TTWordpressAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A019139958FF00B88AE2 /* TTWordpressAppDelegate.m */; };
+		CB38A0C2139959FB00B88AE2 /* WordPressBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0B9139959FB00B88AE2 /* WordPressBaseTableViewController.m */; };
+		CB38A0C3139959FB00B88AE2 /* WordPressBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0BB139959FB00B88AE2 /* WordPressBlogViewController.m */; };
+		CB38A0C4139959FB00B88AE2 /* WordPressPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0BD139959FB00B88AE2 /* WordPressPostViewController.m */; };
+		CB38A0C5139959FB00B88AE2 /* WordPressCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0BF139959FB00B88AE2 /* WordPressCommentViewController.m */; };
+		CB38A0C6139959FB00B88AE2 /* WordPressAddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0C1139959FB00B88AE2 /* WordPressAddCommentViewController.m */; };
+		CB38A0CD13995A1200B88AE2 /* WordPressDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0C813995A1200B88AE2 /* WordPressDataSource.m */; };
+		CB38A0CE13995A1200B88AE2 /* WordPressPostDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0CA13995A1200B88AE2 /* WordPressPostDataSource.m */; };
+		CB38A0CF13995A1200B88AE2 /* WordPressCommentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0CC13995A1200B88AE2 /* WordPressCommentDataSource.m */; };
+		CB38A0D213995A2F00B88AE2 /* WordPressPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0D113995A2F00B88AE2 /* WordPressPostModel.m */; };
+		CB38A0DA13995AA300B88AE2 /* WordPressPost.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0D513995AA300B88AE2 /* WordPressPost.m */; };
+		CB38A0DB13995AA300B88AE2 /* WordPressCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0D713995AA300B88AE2 /* WordPressCategory.m */; };
+		CB38A0DC13995AA300B88AE2 /* WordPressComment.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38A0D913995AA300B88AE2 /* WordPressComment.m */; };
+		CB3D2FE8139A606800B94586 /* TableItemDisclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D2FE7139A606800B94586 /* TableItemDisclosure.m */; };
+		CB3D2FF0139A607F00B94586 /* TableCellDisclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D2FEB139A607F00B94586 /* TableCellDisclosure.m */; };
+		CB3D2FF1139A607F00B94586 /* WordPressPostTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D2FED139A607F00B94586 /* WordPressPostTableCell.m */; };
+		CB3D2FF2139A607F00B94586 /* WordPressCommentTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D2FEF139A607F00B94586 /* WordPressCommentTableCell.m */; };
+		CB3D2FF7139A659800B94586 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D2FF6139A659800B94586 /* GTMNSString+HTML.m */; };
+		CB3D3010139BDC0200B94586 /* WPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D300F139BDC0200B94586 /* WPTabBarController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3201088596B4756681693702 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3201088596B4756681693700 /* Three20UICommon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20UICommon;
+		};
+		3201088596B4756681693706 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3201088596B4756681693700 /* Three20UICommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20UICommon;
+		};
+		3206A0F794A6D7A3F259DBF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = extThree20JSON;
+		};
+		3206A0F794A6D7A3F259DBF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = extThree20JSON;
+		};
+		320A2827FEC940B25BC42C62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20Core;
+		};
+		320A2827FEC940B25BC42C66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20Core;
+		};
+		320A5A189C235877202780D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20Network;
+		};
+		320A5A189C235877202780D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20Network;
+		};
+		320A737074758E53BA54BE92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20UINavigator;
+		};
+		320A737074758E53BA54BE96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20UINavigator;
+		};
+		320CC833B8AF0ACFD35E6222 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20Style;
+		};
+		320CC833B8AF0ACFD35E6226 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20Style;
+		};
+		320D7DCCE32703ACAB9A45E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		320D7DCCE32703ACAB9A45E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		320F2C48872C2E2C4DF86202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20UI;
+		};
+		320F2C48872C2E2C4DF86206 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20UI;
+		};
+		CB3D2D6B13995CF000B94586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UnitTests;
+		};
+		CB3D2D6E13995CF100B94586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20CoreUnitTests;
+		};
+		CB3D2D7113995CF100B94586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20NetworkUnitTests;
+		};
+		CB3D2D7413995CF100B94586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20StyleUnitTests;
+		};
+		CB3D2D7713995CF100B94586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UIUnitTests;
+		};
+		CB3D2D7A13995CF100B94586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3201088596B4756681693700 /* Three20UICommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UICommonUnitTests;
+		};
+		CB3D2D7D13995CF100B94586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UINavigatorUnitTests;
+		};
+		CB3D2DF213995D2500B94586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E645BD91187751200F08CB1;
+			remoteInfo = "extThree20JSON+YAJL";
+		};
+		CB3D2DF413995D2500B94586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = "extThree20JSONUnitTests+SBJSON";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3201088596B4756681693700 /* Three20UICommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UICommon.xcodeproj; path = ../three20/src/Three20UICommon/Three20UICommon.xcodeproj; sourceTree = SOURCE_ROOT; };
+		3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = extThree20JSON.xcodeproj; path = ../three20/src/extThree20JSON/extThree20JSON.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Core.xcodeproj; path = ../three20/src/Three20Core/Three20Core.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320A5A189C235877202780D0 /* Three20Network.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Network.xcodeproj; path = ../three20/src/Three20Network/Three20Network.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UINavigator.xcodeproj; path = ../three20/src/Three20UINavigator/Three20UINavigator.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320AF8492C47A4D819F7C450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		320B6C86F11D9990244A9730 /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
+		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
+		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CB23B280139D0F600036E433 /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = default.css; path = Resources/default.css; sourceTree = "<group>"; };
+		CB38A005139958FF00B88AE2 /* TTWordpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTWordpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB38A009139958FF00B88AE2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CB38A00B139958FF00B88AE2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CB38A00D139958FF00B88AE2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CB38A011139958FF00B88AE2 /* TTWordpress-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TTWordpress-Info.plist"; sourceTree = "<group>"; };
+		CB38A013139958FF00B88AE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB38A015139958FF00B88AE2 /* TTWordpress-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TTWordpress-Prefix.pch"; sourceTree = "<group>"; };
+		CB38A016139958FF00B88AE2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB38A018139958FF00B88AE2 /* TTWordpressAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTWordpressAppDelegate.h; sourceTree = "<group>"; };
+		CB38A019139958FF00B88AE2 /* TTWordpressAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTWordpressAppDelegate.m; sourceTree = "<group>"; };
+		CB38A0B8139959FB00B88AE2 /* WordPressBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressBaseTableViewController.h; sourceTree = "<group>"; };
+		CB38A0B9139959FB00B88AE2 /* WordPressBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressBaseTableViewController.m; sourceTree = "<group>"; };
+		CB38A0BA139959FB00B88AE2 /* WordPressBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressBlogViewController.h; sourceTree = "<group>"; };
+		CB38A0BB139959FB00B88AE2 /* WordPressBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressBlogViewController.m; sourceTree = "<group>"; };
+		CB38A0BC139959FB00B88AE2 /* WordPressPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressPostViewController.h; sourceTree = "<group>"; };
+		CB38A0BD139959FB00B88AE2 /* WordPressPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressPostViewController.m; sourceTree = "<group>"; };
+		CB38A0BE139959FB00B88AE2 /* WordPressCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressCommentViewController.h; sourceTree = "<group>"; };
+		CB38A0BF139959FB00B88AE2 /* WordPressCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressCommentViewController.m; sourceTree = "<group>"; };
+		CB38A0C0139959FB00B88AE2 /* WordPressAddCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressAddCommentViewController.h; sourceTree = "<group>"; };
+		CB38A0C1139959FB00B88AE2 /* WordPressAddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressAddCommentViewController.m; sourceTree = "<group>"; };
+		CB38A0C713995A1200B88AE2 /* WordPressDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressDataSource.h; sourceTree = "<group>"; };
+		CB38A0C813995A1200B88AE2 /* WordPressDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressDataSource.m; sourceTree = "<group>"; };
+		CB38A0C913995A1200B88AE2 /* WordPressPostDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressPostDataSource.h; sourceTree = "<group>"; };
+		CB38A0CA13995A1200B88AE2 /* WordPressPostDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressPostDataSource.m; sourceTree = "<group>"; };
+		CB38A0CB13995A1200B88AE2 /* WordPressCommentDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressCommentDataSource.h; sourceTree = "<group>"; };
+		CB38A0CC13995A1200B88AE2 /* WordPressCommentDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressCommentDataSource.m; sourceTree = "<group>"; };
+		CB38A0D013995A2F00B88AE2 /* WordPressPostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressPostModel.h; sourceTree = "<group>"; };
+		CB38A0D113995A2F00B88AE2 /* WordPressPostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressPostModel.m; sourceTree = "<group>"; };
+		CB38A0D413995AA300B88AE2 /* WordPressPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressPost.h; sourceTree = "<group>"; };
+		CB38A0D513995AA300B88AE2 /* WordPressPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressPost.m; sourceTree = "<group>"; };
+		CB38A0D613995AA300B88AE2 /* WordPressCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressCategory.h; sourceTree = "<group>"; };
+		CB38A0D713995AA300B88AE2 /* WordPressCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressCategory.m; sourceTree = "<group>"; };
+		CB38A0D813995AA300B88AE2 /* WordPressComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressComment.h; sourceTree = "<group>"; };
+		CB38A0D913995AA300B88AE2 /* WordPressComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressComment.m; sourceTree = "<group>"; };
+		CB3D2EE313995EC900B94586 /* TTWordPress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTWordPress.h; sourceTree = "<group>"; };
+		CB3D2FE6139A606800B94586 /* TableItemDisclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableItemDisclosure.h; sourceTree = "<group>"; };
+		CB3D2FE7139A606800B94586 /* TableItemDisclosure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableItemDisclosure.m; sourceTree = "<group>"; };
+		CB3D2FEA139A607F00B94586 /* TableCellDisclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCellDisclosure.h; sourceTree = "<group>"; };
+		CB3D2FEB139A607F00B94586 /* TableCellDisclosure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCellDisclosure.m; sourceTree = "<group>"; };
+		CB3D2FEC139A607F00B94586 /* WordPressPostTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressPostTableCell.h; sourceTree = "<group>"; };
+		CB3D2FED139A607F00B94586 /* WordPressPostTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressPostTableCell.m; sourceTree = "<group>"; };
+		CB3D2FEE139A607F00B94586 /* WordPressCommentTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressCommentTableCell.h; sourceTree = "<group>"; };
+		CB3D2FEF139A607F00B94586 /* WordPressCommentTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressCommentTableCell.m; sourceTree = "<group>"; };
+		CB3D2FF4139A659800B94586 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		CB3D2FF5139A659800B94586 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		CB3D2FF6139A659800B94586 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		CB3D300E139BDC0200B94586 /* WPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTabBarController.h; sourceTree = "<group>"; };
+		CB3D300F139BDC0200B94586 /* WPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTabBarController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB38A002139958FF00B88AE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3206A0F794A6D7A3F259DBF5 /* libextThree20JSON+SBJSON.a in Frameworks */,
+				3201088596B4756681693705 /* libThree20UICommon.a in Frameworks */,
+				320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */,
+				320A737074758E53BA54BE95 /* libThree20UINavigator.a in Frameworks */,
+				320A2827FEC940B25BC42C65 /* libThree20Core.a in Frameworks */,
+				320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */,
+				320AF8492C47A4D819F7C451 /* QuartzCore.framework in Frameworks */,
+				320A5A189C235877202780D5 /* libThree20Network.a in Frameworks */,
+				320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */,
+				CB38A00A139958FF00B88AE2 /* UIKit.framework in Frameworks */,
+				CB38A00C139958FF00B88AE2 /* Foundation.framework in Frameworks */,
+				CB38A00E139958FF00B88AE2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3201088596B4756681693703 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3201088596B4756681693704 /* libThree20UICommon.a */,
+				CB3D2D7B13995CF100B94586 /* UICommonUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3206A0F794A6D7A3F259DBF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3206A0F794A6D7A3F259DBF4 /* libextThree20JSON+SBJSON.a */,
+				CB3D2DF313995D2500B94586 /* libextThree20JSON+YAJL.a */,
+				CB3D2DF513995D2500B94586 /* extJSONUnitTests+SBJSON.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320A2827FEC940B25BC42C63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320A2827FEC940B25BC42C64 /* libThree20Core.a */,
+				CB3D2D6F13995CF100B94586 /* CoreUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320A5A189C235877202780D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320A5A189C235877202780D4 /* libThree20Network.a */,
+				CB3D2D7213995CF100B94586 /* NetworkUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320A737074758E53BA54BE93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320A737074758E53BA54BE94 /* libThree20UINavigator.a */,
+				CB3D2D7E13995CF100B94586 /* UINavigatorUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320CC833B8AF0ACFD35E6223 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320CC833B8AF0ACFD35E6224 /* libThree20Style.a */,
+				CB3D2D7513995CF100B94586 /* StyleUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320D7DCCE32703ACAB9A45E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320D7DCCE32703ACAB9A45E4 /* libThree20.a */,
+				CB3D2D6C13995CF000B94586 /* Three20UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320F2C48872C2E2C4DF86203 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				320F2C48872C2E2C4DF86204 /* libThree20UI.a */,
+				CB3D2D7813995CF100B94586 /* UIUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB23B27F139D0F420036E433 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB23B280139D0F600036E433 /* default.css */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CB389FFA139958FE00B88AE2 = {
+			isa = PBXGroup;
+			children = (
+				CB38A00F139958FF00B88AE2 /* TTWordpress */,
+				CB38A008139958FF00B88AE2 /* Frameworks */,
+				CB38A006139958FF00B88AE2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB38A006139958FF00B88AE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB38A005139958FF00B88AE2 /* TTWordpress.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB38A008139958FF00B88AE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */,
+				3201088596B4756681693700 /* Three20UICommon.xcodeproj */,
+				320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */,
+				320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */,
+				320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */,
+				320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */,
+				320AF8492C47A4D819F7C450 /* QuartzCore.framework */,
+				320A5A189C235877202780D0 /* Three20Network.xcodeproj */,
+				320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */,
+				CB38A009139958FF00B88AE2 /* UIKit.framework */,
+				CB38A00B139958FF00B88AE2 /* Foundation.framework */,
+				CB38A00D139958FF00B88AE2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB38A00F139958FF00B88AE2 /* TTWordpress */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D2FF3139A656D00B94586 /* Google Toolbox for Mac */,
+				CB38A0B4139959B300B88AE2 /* Wordpress */,
+				CB3D300E139BDC0200B94586 /* WPTabBarController.h */,
+				CB3D300F139BDC0200B94586 /* WPTabBarController.m */,
+				CB38A018139958FF00B88AE2 /* TTWordpressAppDelegate.h */,
+				CB38A019139958FF00B88AE2 /* TTWordpressAppDelegate.m */,
+				CB38A010139958FF00B88AE2 /* Supporting Files */,
+			);
+			path = TTWordpress;
+			sourceTree = "<group>";
+		};
+		CB38A010139958FF00B88AE2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				320B6C86F11D9990244A9730 /* Three20.bundle */,
+				CB38A011139958FF00B88AE2 /* TTWordpress-Info.plist */,
+				CB38A012139958FF00B88AE2 /* InfoPlist.strings */,
+				CB38A015139958FF00B88AE2 /* TTWordpress-Prefix.pch */,
+				CB38A016139958FF00B88AE2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB38A0B4139959B300B88AE2 /* Wordpress */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D2EE313995EC900B94586 /* TTWordPress.h */,
+				CB3D2FE4139A604800B94586 /* Table */,
+				CB38A0B5139959C500B88AE2 /* Controller */,
+				CB38A0B7139959E500B88AE2 /* Model */,
+				CB23B27F139D0F420036E433 /* Resources */,
+			);
+			name = Wordpress;
+			sourceTree = "<group>";
+		};
+		CB38A0B5139959C500B88AE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB38A0B8139959FB00B88AE2 /* WordPressBaseTableViewController.h */,
+				CB38A0B9139959FB00B88AE2 /* WordPressBaseTableViewController.m */,
+				CB38A0BA139959FB00B88AE2 /* WordPressBlogViewController.h */,
+				CB38A0BB139959FB00B88AE2 /* WordPressBlogViewController.m */,
+				CB38A0BC139959FB00B88AE2 /* WordPressPostViewController.h */,
+				CB38A0BD139959FB00B88AE2 /* WordPressPostViewController.m */,
+				CB38A0BE139959FB00B88AE2 /* WordPressCommentViewController.h */,
+				CB38A0BF139959FB00B88AE2 /* WordPressCommentViewController.m */,
+				CB38A0C0139959FB00B88AE2 /* WordPressAddCommentViewController.h */,
+				CB38A0C1139959FB00B88AE2 /* WordPressAddCommentViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CB38A0B6139959D000B88AE2 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				CB38A0C713995A1200B88AE2 /* WordPressDataSource.h */,
+				CB38A0C813995A1200B88AE2 /* WordPressDataSource.m */,
+				CB38A0C913995A1200B88AE2 /* WordPressPostDataSource.h */,
+				CB38A0CA13995A1200B88AE2 /* WordPressPostDataSource.m */,
+				CB38A0CB13995A1200B88AE2 /* WordPressCommentDataSource.h */,
+				CB38A0CC13995A1200B88AE2 /* WordPressCommentDataSource.m */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		CB38A0B7139959E500B88AE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB38A0D313995A8900B88AE2 /* Object */,
+				CB38A0D013995A2F00B88AE2 /* WordPressPostModel.h */,
+				CB38A0D113995A2F00B88AE2 /* WordPressPostModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CB38A0D313995A8900B88AE2 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				CB38A0D413995AA300B88AE2 /* WordPressPost.h */,
+				CB38A0D513995AA300B88AE2 /* WordPressPost.m */,
+				CB38A0D613995AA300B88AE2 /* WordPressCategory.h */,
+				CB38A0D713995AA300B88AE2 /* WordPressCategory.m */,
+				CB38A0D813995AA300B88AE2 /* WordPressComment.h */,
+				CB38A0D913995AA300B88AE2 /* WordPressComment.m */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		CB3D2FE4139A604800B94586 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				CB38A0B6139959D000B88AE2 /* DataSource */,
+				CB3D2FE5139A605800B94586 /* TableItem */,
+				CB3D2FE9139A607400B94586 /* TableCell */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
+		CB3D2FE5139A605800B94586 /* TableItem */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D2FE6139A606800B94586 /* TableItemDisclosure.h */,
+				CB3D2FE7139A606800B94586 /* TableItemDisclosure.m */,
+			);
+			name = TableItem;
+			sourceTree = "<group>";
+		};
+		CB3D2FE9139A607400B94586 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D2FEA139A607F00B94586 /* TableCellDisclosure.h */,
+				CB3D2FEB139A607F00B94586 /* TableCellDisclosure.m */,
+				CB3D2FEC139A607F00B94586 /* WordPressPostTableCell.h */,
+				CB3D2FED139A607F00B94586 /* WordPressPostTableCell.m */,
+				CB3D2FEE139A607F00B94586 /* WordPressCommentTableCell.h */,
+				CB3D2FEF139A607F00B94586 /* WordPressCommentTableCell.m */,
+			);
+			name = TableCell;
+			sourceTree = "<group>";
+		};
+		CB3D2FF3139A656D00B94586 /* Google Toolbox for Mac */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D2FF4139A659800B94586 /* GTMDefines.h */,
+				CB3D2FF5139A659800B94586 /* GTMNSString+HTML.h */,
+				CB3D2FF6139A659800B94586 /* GTMNSString+HTML.m */,
+			);
+			name = "Google Toolbox for Mac";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB38A004139958FF00B88AE2 /* TTWordpress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB38A020139958FF00B88AE2 /* Build configuration list for PBXNativeTarget "TTWordpress" */;
+			buildPhases = (
+				CB38A001139958FF00B88AE2 /* Sources */,
+				CB38A002139958FF00B88AE2 /* Frameworks */,
+				CB38A003139958FF00B88AE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3206A0F794A6D7A3F259DBF1 /* PBXTargetDependency */,
+				3201088596B4756681693701 /* PBXTargetDependency */,
+				320D7DCCE32703ACAB9A45E1 /* PBXTargetDependency */,
+				320A737074758E53BA54BE91 /* PBXTargetDependency */,
+				320A2827FEC940B25BC42C61 /* PBXTargetDependency */,
+				320F2C48872C2E2C4DF86201 /* PBXTargetDependency */,
+				320A5A189C235877202780D1 /* PBXTargetDependency */,
+				320CC833B8AF0ACFD35E6221 /* PBXTargetDependency */,
+			);
+			name = TTWordpress;
+			productName = TTWordpress;
+			productReference = CB38A005139958FF00B88AE2 /* TTWordpress.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB389FFC139958FE00B88AE2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = None;
+			};
+			buildConfigurationList = CB389FFF139958FE00B88AE2 /* Build configuration list for PBXProject "TTWordpress" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CB389FFA139958FE00B88AE2;
+			productRefGroup = CB38A006139958FF00B88AE2 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3206A0F794A6D7A3F259DBF3 /* Products */;
+					ProjectRef = 3206A0F794A6D7A3F259DBF0 /* extThree20JSON.xcodeproj */;
+				},
+				{
+					ProductGroup = 320D7DCCE32703ACAB9A45E3 /* Products */;
+					ProjectRef = 320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */;
+				},
+				{
+					ProductGroup = 320A2827FEC940B25BC42C63 /* Products */;
+					ProjectRef = 320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */;
+				},
+				{
+					ProductGroup = 320A5A189C235877202780D3 /* Products */;
+					ProjectRef = 320A5A189C235877202780D0 /* Three20Network.xcodeproj */;
+				},
+				{
+					ProductGroup = 320CC833B8AF0ACFD35E6223 /* Products */;
+					ProjectRef = 320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */;
+				},
+				{
+					ProductGroup = 320F2C48872C2E2C4DF86203 /* Products */;
+					ProjectRef = 320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */;
+				},
+				{
+					ProductGroup = 3201088596B4756681693703 /* Products */;
+					ProjectRef = 3201088596B4756681693700 /* Three20UICommon.xcodeproj */;
+				},
+				{
+					ProductGroup = 320A737074758E53BA54BE93 /* Products */;
+					ProjectRef = 320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				CB38A004139958FF00B88AE2 /* TTWordpress */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3201088596B4756681693704 /* libThree20UICommon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20UICommon.a;
+			remoteRef = 3201088596B4756681693706 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3206A0F794A6D7A3F259DBF4 /* libextThree20JSON+SBJSON.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libextThree20JSON+SBJSON.a";
+			remoteRef = 3206A0F794A6D7A3F259DBF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320A2827FEC940B25BC42C64 /* libThree20Core.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20Core.a;
+			remoteRef = 320A2827FEC940B25BC42C66 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320A5A189C235877202780D4 /* libThree20Network.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20Network.a;
+			remoteRef = 320A5A189C235877202780D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320A737074758E53BA54BE94 /* libThree20UINavigator.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20UINavigator.a;
+			remoteRef = 320A737074758E53BA54BE96 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320CC833B8AF0ACFD35E6224 /* libThree20Style.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20Style.a;
+			remoteRef = 320CC833B8AF0ACFD35E6226 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320D7DCCE32703ACAB9A45E4 /* libThree20.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20.a;
+			remoteRef = 320D7DCCE32703ACAB9A45E6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		320F2C48872C2E2C4DF86204 /* libThree20UI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20UI.a;
+			remoteRef = 320F2C48872C2E2C4DF86206 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D2D6C13995CF000B94586 /* Three20UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Three20UnitTests.octest;
+			remoteRef = CB3D2D6B13995CF000B94586 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D2D6F13995CF100B94586 /* CoreUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CoreUnitTests.octest;
+			remoteRef = CB3D2D6E13995CF100B94586 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D2D7213995CF100B94586 /* NetworkUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkUnitTests.octest;
+			remoteRef = CB3D2D7113995CF100B94586 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D2D7513995CF100B94586 /* StyleUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StyleUnitTests.octest;
+			remoteRef = CB3D2D7413995CF100B94586 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D2D7813995CF100B94586 /* UIUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIUnitTests.octest;
+			remoteRef = CB3D2D7713995CF100B94586 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D2D7B13995CF100B94586 /* UICommonUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UICommonUnitTests.octest;
+			remoteRef = CB3D2D7A13995CF100B94586 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D2D7E13995CF100B94586 /* UINavigatorUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UINavigatorUnitTests.octest;
+			remoteRef = CB3D2D7D13995CF100B94586 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D2DF313995D2500B94586 /* libextThree20JSON+YAJL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libextThree20JSON+YAJL.a";
+			remoteRef = CB3D2DF213995D2500B94586 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB3D2DF513995D2500B94586 /* extJSONUnitTests+SBJSON.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "extJSONUnitTests+SBJSON.octest";
+			remoteRef = CB3D2DF413995D2500B94586 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB38A003139958FF00B88AE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
+				CB38A014139958FF00B88AE2 /* InfoPlist.strings in Resources */,
+				CB23B281139D0F600036E433 /* default.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB38A001139958FF00B88AE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB38A017139958FF00B88AE2 /* main.m in Sources */,
+				CB38A01A139958FF00B88AE2 /* TTWordpressAppDelegate.m in Sources */,
+				CB38A0C2139959FB00B88AE2 /* WordPressBaseTableViewController.m in Sources */,
+				CB38A0C3139959FB00B88AE2 /* WordPressBlogViewController.m in Sources */,
+				CB38A0C4139959FB00B88AE2 /* WordPressPostViewController.m in Sources */,
+				CB38A0C5139959FB00B88AE2 /* WordPressCommentViewController.m in Sources */,
+				CB38A0C6139959FB00B88AE2 /* WordPressAddCommentViewController.m in Sources */,
+				CB38A0CD13995A1200B88AE2 /* WordPressDataSource.m in Sources */,
+				CB38A0CE13995A1200B88AE2 /* WordPressPostDataSource.m in Sources */,
+				CB38A0CF13995A1200B88AE2 /* WordPressCommentDataSource.m in Sources */,
+				CB38A0D213995A2F00B88AE2 /* WordPressPostModel.m in Sources */,
+				CB38A0DA13995AA300B88AE2 /* WordPressPost.m in Sources */,
+				CB38A0DB13995AA300B88AE2 /* WordPressCategory.m in Sources */,
+				CB38A0DC13995AA300B88AE2 /* WordPressComment.m in Sources */,
+				CB3D2FE8139A606800B94586 /* TableItemDisclosure.m in Sources */,
+				CB3D2FF0139A607F00B94586 /* TableCellDisclosure.m in Sources */,
+				CB3D2FF1139A607F00B94586 /* WordPressPostTableCell.m in Sources */,
+				CB3D2FF2139A607F00B94586 /* WordPressCommentTableCell.m in Sources */,
+				CB3D2FF7139A659800B94586 /* GTMNSString+HTML.m in Sources */,
+				CB3D3010139BDC0200B94586 /* WPTabBarController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3201088596B4756681693701 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20UICommon;
+			targetProxy = 3201088596B4756681693702 /* PBXContainerItemProxy */;
+		};
+		3206A0F794A6D7A3F259DBF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = extThree20JSON;
+			targetProxy = 3206A0F794A6D7A3F259DBF2 /* PBXContainerItemProxy */;
+		};
+		320A2827FEC940B25BC42C61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20Core;
+			targetProxy = 320A2827FEC940B25BC42C62 /* PBXContainerItemProxy */;
+		};
+		320A5A189C235877202780D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20Network;
+			targetProxy = 320A5A189C235877202780D2 /* PBXContainerItemProxy */;
+		};
+		320A737074758E53BA54BE91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20UINavigator;
+			targetProxy = 320A737074758E53BA54BE92 /* PBXContainerItemProxy */;
+		};
+		320CC833B8AF0ACFD35E6221 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20Style;
+			targetProxy = 320CC833B8AF0ACFD35E6222 /* PBXContainerItemProxy */;
+		};
+		320D7DCCE32703ACAB9A45E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20;
+			targetProxy = 320D7DCCE32703ACAB9A45E2 /* PBXContainerItemProxy */;
+		};
+		320F2C48872C2E2C4DF86201 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20UI;
+			targetProxy = 320F2C48872C2E2C4DF86202 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB38A012139958FF00B88AE2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB38A013139958FF00B88AE2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB38A01E139958FF00B88AE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/../three20",
+					"$(BUILT_PRODUCTS_DIR)/../../three20",
+					../three20/Build/Products/three20,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CB38A01F139958FF00B88AE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/../three20",
+					"$(BUILT_PRODUCTS_DIR)/../../three20",
+					../three20/Build/Products/three20,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		CB38A021139958FF00B88AE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TTWordpress/TTWordpress-Prefix.pch";
+				INFOPLIST_FILE = "TTWordpress/TTWordpress-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CB38A022139958FF00B88AE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TTWordpress/TTWordpress-Prefix.pch";
+				INFOPLIST_FILE = "TTWordpress/TTWordpress-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB389FFF139958FE00B88AE2 /* Build configuration list for PBXProject "TTWordpress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB38A01E139958FF00B88AE2 /* Debug */,
+				CB38A01F139958FF00B88AE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB38A020139958FF00B88AE2 /* Build configuration list for PBXNativeTarget "TTWordpress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB38A021139958FF00B88AE2 /* Debug */,
+				CB38A022139958FF00B88AE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB389FFC139958FE00B88AE2 /* Project object */;
+}
