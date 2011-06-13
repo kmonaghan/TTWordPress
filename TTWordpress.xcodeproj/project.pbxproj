@@ -42,6 +42,7 @@
 		CB3D2FF2139A607F00B94586 /* WordPressCommentTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D2FEF139A607F00B94586 /* WordPressCommentTableCell.m */; };
 		CB3D2FF7139A659800B94586 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D2FF6139A659800B94586 /* GTMNSString+HTML.m */; };
 		CB3D3010139BDC0200B94586 /* WPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D300F139BDC0200B94586 /* WPTabBarController.m */; };
+		CB7C2F09139D684B000711A9 /* README in Resources */ = {isa = PBXBuildFile; fileRef = CB7C2F08139D684B000711A9 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -282,6 +283,7 @@
 		CB3D2FF6139A659800B94586 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		CB3D300E139BDC0200B94586 /* WPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTabBarController.h; sourceTree = "<group>"; };
 		CB3D300F139BDC0200B94586 /* WPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTabBarController.m; sourceTree = "<group>"; };
+		CB7C2F08139D684B000711A9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +429,7 @@
 		CB38A00F139958FF00B88AE2 /* TTWordpress */ = {
 			isa = PBXGroup;
 			children = (
+				CB7C2F08139D684B000711A9 /* README */,
 				CB3D2FF3139A656D00B94586 /* Google Toolbox for Mac */,
 				CB38A0B4139959B300B88AE2 /* Wordpress */,
 				CB3D300E139BDC0200B94586 /* WPTabBarController.h */,
@@ -774,6 +777,7 @@
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				CB38A014139958FF00B88AE2 /* InfoPlist.strings in Resources */,
 				CB23B281139D0F600036E433 /* default.css in Resources */,
+				CB7C2F09139D684B000711A9 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
