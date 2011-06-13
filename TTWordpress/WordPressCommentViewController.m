@@ -17,8 +17,10 @@
 @implementation WordPressCommentViewController
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithPost:(WordPressPost*)post {
-	if (self = [super initWithNibName:nil bundle:nil]) {
-		_post = post;
+	self = [super initWithNibName:nil bundle:nil];
+    
+    if (self) {
+		_post = [post retain];
 		
 		self.dataSource = [WordPressCommentDataSource dataSourceWithItems:post.comments];
 		
@@ -34,6 +36,8 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
+    TT_RELEASE_SAFELY(_post);
+    
 	[super dealloc];
 }
 
