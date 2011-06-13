@@ -13,7 +13,6 @@
 	UITextField         *nameField;
 	UITextField         *emailField;
     
-    NSString            *_url;
 	NSMutableDictionary *_postParams;
 	
 	TTURLRequest        *_request;

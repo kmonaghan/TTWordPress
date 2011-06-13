@@ -36,13 +36,14 @@
 - (void)dealloc {
 	TT_RELEASE_SAFELY(nameField);
 	TT_RELEASE_SAFELY(emailField);
-	TT_RELEASE_SAFELY(_url);
 	TT_RELEASE_SAFELY(_postParams);
 	
+    /*
     if (_request && _request.isLoading)
     {
         [_request cancel];
     }
+    */
     
     TT_RELEASE_SAFELY(_request);
     
@@ -105,10 +106,10 @@
                                                        nil] 
                                               forKeys:[NSArray arrayWithObjects:@"post_id", @"name", @"email", @"content", nil]];
 	
-	_url = [NSString stringWithFormat:@"%@?json=respond.submit_comment", WP_BASE_URL];
+	NSString *url = [NSString stringWithFormat:@"%@?json=respond.submit_comment", WP_BASE_URL];
     
 	TTURLRequest* request = [TTURLRequest
-							 requestWithURL: _url
+							 requestWithURL: url
 							 delegate: self];
 	
 	request.cachePolicy = TTURLRequestCachePolicyNoCache; 
@@ -164,6 +165,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void) submitError:(NSDictionary *) response
 {
+    NSLog(@"response: %@", response);
+    
 	[super showAnimationDidStop];
 	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Submission Error" 
 													message:[response objectForKey:@"message"] 
@@ -181,9 +184,9 @@
 	
 	NSDictionary* feed = response.rootObject;
 	
-    //	NSLog(@"Returned from server: %@", feed);
+    NSLog(@"Returned from server: %@", feed);
 	
-	if ([[feed objectForKey:@"status"] intValue] == 1) {
+	if ([[feed objectForKey:@"status"] isEqualToString:@"pending"]) {
 		if ([feed objectForKey:@"response"])
 		{
 			[self submitResult:[feed objectForKey:@"response"]];
