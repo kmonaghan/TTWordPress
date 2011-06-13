@@ -20,7 +20,7 @@
 	self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-		_post = post;
+		_post = [post retain];
 
         self.hidesBottomBarWhenPushed = YES;
         
@@ -49,21 +49,28 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
+    TT_RELEASE_SAFELY(_post);
+    TT_RELEASE_SAFELY(_activityView);
+    
 	[super dealloc];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)showActivity:(BOOL)show {
     if (nil == _activityView) {
-        _activityView = [[TTActivityLabel alloc] initWithStyle:TTActivityLabelStyleBlackBox];
-        [self.tableView.tableHeaderView addSubview:_activityView];
+        _activityView = [[TTActivityLabel alloc] initWithStyle:TTActivityLabelStyleWhiteBox];
+        
     }
     
     if (show) {
+        [self.tableView.tableHeaderView addSubview:_activityView];
+        
         _activityView.text = @"Loading content";
         _activityView.frame = CGRectMake(0, 150, 320, 40);
         _activityView.hidden = NO;
     } else {
+        [_activityView removeFromSuperview];
+        
         _activityView.hidden = YES;
     }
 }
@@ -83,7 +90,7 @@
 
     [line release];
     
-	UIWebView* web = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 303)] autorelease];
+	UIWebView* web = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)] autorelease];
 
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
 	[df setDateFormat:WP_POST_DATE_FORMAT];
@@ -101,14 +108,14 @@
 
 	web.delegate = self;
 
-//	[self.tableView insertSubview:web aboveSubview:self.tableView.tableHeaderView];
+	[self.tableView insertSubview:web aboveSubview:self.tableView.tableHeaderView];
     
     [self showActivity:YES];
 }	
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-	if (navigationType == UIWebViewNavigationTypeLinkClicked)
+    if (navigationType == UIWebViewNavigationTypeLinkClicked)
 	{
 		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:[[request URL] absoluteString]] applyAnimated:YES]];
 		return NO;
@@ -118,15 +125,18 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)webViewDidFinishLoad:(UIWebView *)webView {	
-	[self showActivity:NO];
-    
-    NSString* height = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('maincontent').offsetHeight;"];
+    [self showActivity:NO];
 	
-    CGFloat newHeight = ([height floatValue] > 294) ? [height floatValue] + 10: 304;
+    CGSize webViewSize = [webView sizeThatFits:CGSizeZero];
 
-	UIView* headerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, newHeight)] autorelease];
-	
-    webView.frame = CGRectMake(0, 0, 320, newHeight - 1);
+    CGFloat newHeight = (webViewSize.height > 294) ? webViewSize.height : 304;
+    
+	UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, newHeight)];
+	headerView.opaque = NO;
+    headerView.backgroundColor = [UIColor clearColor];
+	[headerView setAlpha:0];
+    
+    webView.frame = CGRectMake(0, 0, 320, newHeight);
     
 	for (id subview in webView.subviews){
 		if ([[subview class] isSubclassOfClass: [UIScrollView class]])
@@ -140,11 +150,11 @@
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, newHeight - 1, 320, 1)];
     line.backgroundColor = [UIColor lightGrayColor];
     
-    [headerView addSubview:line];
+    [webView addSubview:line];
     
 	self.tableView.tableHeaderView = headerView;
 
-    [self.view addSubview:webView];
+//    [self.view addSubview:webView];
     
     [line release];
  }
