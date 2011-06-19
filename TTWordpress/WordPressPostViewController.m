@@ -30,7 +30,8 @@
         {
             [items addObject:[TableItemDisclosure itemWithText:[NSString stringWithFormat:@"View comments (%d)", _post.commentCount] URL:nil]];
         }
-        else 
+        
+        if ([_post.commentStatus isEqualToString:@"open"])
         {
             [items addObject:[TableItemDisclosure itemWithText:@"Make a comment" URL:nil]];
         }
