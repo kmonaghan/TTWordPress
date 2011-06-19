@@ -25,8 +25,6 @@
 	{
 		_postId = postId;
 		self.delegate = self;
-        
-        _postParams = [[NSMutableDictionary alloc] init];
 	}
 	
 	return self;
@@ -36,7 +34,6 @@
 - (void)dealloc {
 	TT_RELEASE_SAFELY(nameField);
 	TT_RELEASE_SAFELY(emailField);
-	TT_RELEASE_SAFELY(_postParams);
 	
     /*
     if (_request && _request.isLoading)
@@ -98,28 +95,20 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void) sendComment {	
-    _postParams = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%d", _postId], 
-                                                       [[NSUserDefaults standardUserDefaults] objectForKey:@"name"],
-                                                       [[NSUserDefaults standardUserDefaults] objectForKey:@"email"],
-                                                       _textView.text,
-                                                       nil] 
-                                              forKeys:[NSArray arrayWithObjects:@"post_id", @"name", @"email", @"content", nil]];
-	
-	NSString *url = [NSString stringWithFormat:@"%@?json=respond.submit_comment", WP_BASE_URL];
-    
-	TTURLRequest* request = [TTURLRequest
-							 requestWithURL: url
+- (void) sendComment 
+{	
+    TTURLRequest* request = [TTURLRequest
+							 requestWithURL:[NSString stringWithFormat:@"%@?json=respond.submit_comment", WP_BASE_URL]
 							 delegate: self];
 	
 	request.cachePolicy = TTURLRequestCachePolicyNoCache; 
 	
 	request.httpMethod = @"POST";
-	
-	for (NSString* param in _postParams) 
-	{
-		[request.parameters setObject:[_postParams objectForKey:param] forKey:param];
-	}
+
+    [request.parameters setObject:[NSString stringWithFormat:@"%d", _postId] forKey:@"post_id"];
+    [request.parameters setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"name"] forKey:@"name"];
+    [request.parameters setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"email"] forKey:@"email"];
+    [request.parameters setObject:_textView.text forKey:@"content"];
 	
 	TTURLJSONResponse* response = [[TTURLJSONResponse alloc] init];
 	request.response = response;
@@ -158,26 +147,6 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void) submitResult:(NSDictionary *) response {
-	[self dismissPopupViewControllerAnimated:YES];
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void) submitError:(NSDictionary *) response
-{
-    NSLog(@"response: %@", response);
-    
-	[super showAnimationDidStop];
-	UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Submission Error" 
-													message:[response objectForKey:@"message"] 
-												   delegate:nil 
-										  cancelButtonTitle:@"Okay"
-										  otherButtonTitles:nil];
-	[alert show];
-	[alert release];	
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)requestDidFinishLoad:(TTURLRequest*)request {
 	TTURLJSONResponse* response = request.response;
 	TTDASSERT([response.rootObject isKindOfClass:[NSDictionary class]]);
@@ -186,21 +155,22 @@
 	
     NSLog(@"Returned from server: %@", feed);
 	
-	if ([[feed objectForKey:@"status"] isEqualToString:@"pending"]) {
-		if ([feed objectForKey:@"response"])
-		{
-			[self submitResult:[feed objectForKey:@"response"]];
-		}
+	if (([[feed objectForKey:@"status"] isEqualToString:@"pending"])
+        || ([[feed objectForKey:@"status"] isEqualToString:@"ok"]))
+    {
+		[self dismissPopupViewControllerAnimated:YES];
 	} else {
-		if ([feed objectForKey:@"response"])
-		{
-			[self submitError:[feed objectForKey:@"response"]];
-		}
-		else
-		{
-			[self submitError:feed];
-		}
+        [super showAnimationDidStop];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Submission Error" 
+                                                        message:@"There was a problem submitting your comment" 
+                                                       delegate:nil 
+                                              cancelButtonTitle:@"Okay"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];	
 	}
+    
+//    [super requestDidFinishLoad:request];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
