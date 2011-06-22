@@ -431,7 +431,7 @@
 			children = (
 				CB7C2F08139D684B000711A9 /* README */,
 				CB3D2FF3139A656D00B94586 /* Google Toolbox for Mac */,
-				CB38A0B4139959B300B88AE2 /* Wordpress */,
+				CB38A0B4139959B300B88AE2 /* WordPress */,
 				CB3D300E139BDC0200B94586 /* WPTabBarController.h */,
 				CB3D300F139BDC0200B94586 /* WPTabBarController.m */,
 				CB38A018139958FF00B88AE2 /* TTWordpressAppDelegate.h */,
@@ -453,7 +453,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CB38A0B4139959B300B88AE2 /* Wordpress */ = {
+		CB38A0B4139959B300B88AE2 /* WordPress */ = {
 			isa = PBXGroup;
 			children = (
 				CB3D2EE313995EC900B94586 /* TTWordPress.h */,
@@ -462,7 +462,7 @@
 				CB38A0B7139959E500B88AE2 /* Model */,
 				CB23B27F139D0F420036E433 /* Resources */,
 			);
-			name = Wordpress;
+			name = WordPress;
 			sourceTree = "<group>";
 		};
 		CB38A0B5139959C500B88AE2 /* Controller */ = {

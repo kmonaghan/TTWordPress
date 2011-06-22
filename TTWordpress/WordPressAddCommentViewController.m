@@ -153,8 +153,6 @@
 	
 	NSDictionary* feed = response.rootObject;
 	
-    NSLog(@"Returned from server: %@", feed);
-	
 	if (([[feed objectForKey:@"status"] isEqualToString:@"pending"])
         || ([[feed objectForKey:@"status"] isEqualToString:@"ok"]))
     {
@@ -169,8 +167,7 @@
         [alert show];
         [alert release];	
 	}
-    
-//    [super requestDidFinishLoad:request];
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

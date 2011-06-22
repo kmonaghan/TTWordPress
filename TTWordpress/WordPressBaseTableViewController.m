@@ -13,7 +13,10 @@
 @implementation WordPressBaseTableViewController
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) 
+    {
 		self.navigationBarTintColor = WP_NAVIGATION_BAR;
 		self.statusBarStyle = WP_STATUS_BAR;		
 	}

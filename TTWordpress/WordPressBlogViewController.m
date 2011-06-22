@@ -23,7 +23,9 @@
         
 		self.title = WP_POST_LIST_TITLE;
 
-		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:WP_POST_LIST_BAR_TITLE image:[UIImage imageNamed:@"166-newspaper.png"] tag:12348] autorelease];
+		self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:WP_POST_LIST_BAR_TITLE 
+                                                         image:[UIImage imageNamed:@"166-newspaper.png"] 
+                                                           tag:12348] autorelease];
 	}
 	return self;
 }
