@@ -31,8 +31,8 @@
 	
 	[map from:@"tt://tabbar" toSharedViewController:[WPTabBarController class]];
     [map from:@"tt://examplepostlist" toSharedViewController:[WordPressBlogViewController class]];
-	[map from:@"tt://blog/author/(initWithAuthorId:)" toSharedViewController:[WordPressBlogViewController class]];
-	[map from:@"tt://blog/category/(initWithCategoryId:)" toSharedViewController:[WordPressBlogViewController class]];
+	[map from:@"tt://blog/author/(initWithAuthorId:)" toViewController:[WordPressBlogViewController class]];
+	[map from:@"tt://blog/category/(initWithCategoryId:)" toViewController:[WordPressBlogViewController class]];
 	[map from:@"tt://blog/post/comment/(initWithPostId:)" toModalViewController:[WordPressAddCommentViewController class]];
     
 	[navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://tabbar"]];
