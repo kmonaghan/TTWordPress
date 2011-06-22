@@ -18,6 +18,7 @@
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
 		CB23B281139D0F600036E433 /* default.css in Resources */ = {isa = PBXBuildFile; fileRef = CB23B280139D0F600036E433 /* default.css */; };
+		CB298CEE13B2834E009311E8 /* 166-newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = CB298CED13B2834E009311E8 /* 166-newspaper.png */; };
 		CB38A00A139958FF00B88AE2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB38A009139958FF00B88AE2 /* UIKit.framework */; };
 		CB38A00C139958FF00B88AE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB38A00B139958FF00B88AE2 /* Foundation.framework */; };
 		CB38A00E139958FF00B88AE2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB38A00D139958FF00B88AE2 /* CoreGraphics.framework */; };
@@ -235,6 +236,7 @@
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		CB23B280139D0F600036E433 /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = default.css; path = Resources/default.css; sourceTree = "<group>"; };
+		CB298CED13B2834E009311E8 /* 166-newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "166-newspaper.png"; sourceTree = "<group>"; };
 		CB38A005139958FF00B88AE2 /* TTWordpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTWordpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB38A009139958FF00B88AE2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB38A00B139958FF00B88AE2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -283,7 +285,7 @@
 		CB3D2FF6139A659800B94586 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		CB3D300E139BDC0200B94586 /* WPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTabBarController.h; sourceTree = "<group>"; };
 		CB3D300F139BDC0200B94586 /* WPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTabBarController.m; sourceTree = "<group>"; };
-		CB7C2F08139D684B000711A9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		CB7C2F08139D684B000711A9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = TTWordpress/README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,9 +392,18 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		CB298CEC13B2834E009311E8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CB298CED13B2834E009311E8 /* 166-newspaper.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		CB389FFA139958FE00B88AE2 = {
 			isa = PBXGroup;
 			children = (
+				CB7C2F08139D684B000711A9 /* README */,
 				CB38A00F139958FF00B88AE2 /* TTWordpress */,
 				CB38A008139958FF00B88AE2 /* Frameworks */,
 				CB38A006139958FF00B88AE2 /* Products */,
@@ -429,7 +440,6 @@
 		CB38A00F139958FF00B88AE2 /* TTWordpress */ = {
 			isa = PBXGroup;
 			children = (
-				CB7C2F08139D684B000711A9 /* README */,
 				CB3D2FF3139A656D00B94586 /* Google Toolbox for Mac */,
 				CB38A0B4139959B300B88AE2 /* WordPress */,
 				CB3D300E139BDC0200B94586 /* WPTabBarController.h */,
@@ -444,6 +454,7 @@
 		CB38A010139958FF00B88AE2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CB298CEC13B2834E009311E8 /* Images */,
 				320B6C86F11D9990244A9730 /* Three20.bundle */,
 				CB38A011139958FF00B88AE2 /* TTWordpress-Info.plist */,
 				CB38A012139958FF00B88AE2 /* InfoPlist.strings */,
@@ -778,6 +789,7 @@
 				CB38A014139958FF00B88AE2 /* InfoPlist.strings in Resources */,
 				CB23B281139D0F600036E433 /* default.css in Resources */,
 				CB7C2F09139D684B000711A9 /* README in Resources */,
+				CB298CEE13B2834E009311E8 /* 166-newspaper.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
