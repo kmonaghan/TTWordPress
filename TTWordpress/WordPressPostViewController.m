@@ -9,6 +9,7 @@
 
 #import "WordPressPostViewController.h"
 #import "WordPressPostDataSource.h"
+#import "WordPressPostModel.h"
 #import "WordPressPost.h"
 #import "WordPressCommentViewController.h"
 #import "WordPressCategory.h"
@@ -19,51 +20,68 @@
 - (id)initWithPost:(WordPressPost*)post {
 	self = [super initWithNibName:nil bundle:nil];
     
-    if (self) {
-		_post = [post retain];
-
+    if (self) 
+    {
         self.hidesBottomBarWhenPushed = YES;
         
-        NSMutableArray* items = [NSMutableArray arrayWithCapacity:1];
-        
-        if (_post.commentCount > 0)
-        {
-            [items addObject:[TableItemDisclosure itemWithText:[NSString stringWithFormat:@"View comments (%d)", _post.commentCount] URL:nil]];
-        }
-        
-        if ([_post.commentStatus isEqualToString:@"open"])
-        {
-            [items addObject:[TableItemDisclosure itemWithText:@"Make a comment" URL:nil]];
-        }
-        
-        [items addObject:[TTTableTextItem itemWithText:[NSString stringWithFormat:@"More posts by %@", _post.author] URL:[NSString stringWithFormat:@"tt://blog/author/%d", _post.authorId]]];
-        
-        for (WordPressCategory* category in _post.categories){
-            [items addObject:[TTTableTextItem itemWithText:[NSString stringWithFormat:@"More posts in %@", category.title] URL:[NSString stringWithFormat:@"tt://blog/category/%d", category.categoryId]]];
-        }
-        
-        self.dataSource = [WordPressPostDataSource dataSourceWithItems:items];
+        _postLoaded = YES;
+
+        self.dataSource = [[[WordPressPostDataSource alloc] initWithPost:post] autorelease];
+
     }
     
 	return self;	
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)dealloc {
-    TT_RELEASE_SAFELY(_post);
+- (id)initWithPostId:(NSInteger)postId
+{
+   	self = [super initWithNibName:nil bundle:nil];
+    
+    if (self) 
+    {
+		self.hidesBottomBarWhenPushed = YES;
+        
+        self.dataSource = [[[WordPressPostDataSource alloc] initWithPostId:postId] autorelease];
+    }
+    
+	return self; 
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (id)initWithApiUrl:(NSString *)url
+{
+   	self = [super initWithNibName:nil bundle:nil];
+    
+    if (self) 
+    {
+		self.hidesBottomBarWhenPushed = YES;
+        
+        self.dataSource = [[[WordPressPostDataSource alloc] initWithApiUrl:url] autorelease];
+    }
+    
+	return self; 
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)dealloc 
+{
     TT_RELEASE_SAFELY(_activityView);
     
 	[super dealloc];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)showActivity:(BOOL)show {
-    if (nil == _activityView) {
+- (void)showActivity:(BOOL)show 
+{
+    if (nil == _activityView) 
+    {
         _activityView = [[TTActivityLabel alloc] initWithStyle:TTActivityLabelStyleWhiteBox];
         
     }
     
-    if (show) {
+    if (show) 
+    {
         [self.tableView.tableHeaderView addSubview:_activityView];
         
         _activityView.text = @"Loading content";
@@ -77,45 +95,61 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)loadView {
+- (void)loadView 
+{
 	[super loadView];
 	
-	UIView* headerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 304)] autorelease];
-	
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 303, 320, 1)];
-    line.backgroundColor = [UIColor lightGrayColor];
-    
-    [headerView addSubview:line];
-    
-    self.tableView.tableHeaderView = headerView;
-
-    [line release];
-    
-	UIWebView* web = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)] autorelease];
-
-	NSDateFormatter *df = [[NSDateFormatter alloc] init];
-	[df setDateFormat:WP_POST_DATE_FORMAT];
-	
-	NSString* postHtml = [NSString stringWithFormat:@"<html><head><link href='default.css' rel='stylesheet' type='text/css' /></head><body><div id='maincontent' class='content'><div class='post'><div id='title'><span style='color:#CC0000'>%@</span> %@</div><div id='singlentry' class='left-justified'>%@</div></div></div></body></html>",
-						  [df stringFromDate:_post.postDate],
-						  _post.title,
-						  _post.content];
-	
-	[df release];
-	NSString *path = [[NSBundle mainBundle] bundlePath];
-	NSURL *baseURL = [NSURL fileURLWithPath:path];
-	
-	[web loadHTMLString:postHtml baseURL:baseURL];
-
-	web.delegate = self;
-
-	[self.tableView insertSubview:web aboveSubview:self.tableView.tableHeaderView];
-    
-    [self showActivity:YES];
 }	
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+- (void)didLoadModel:(BOOL)firstTime 
+{
+    [super didLoadModel:firstTime];
+
+    if (firstTime || _postLoaded)
+    {
+        WordPressPostModel* post = (WordPressPostModel *)self.dataSource.model;
+        
+        _postLoaded = NO;
+        
+        UIView* headerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 304)] autorelease];
+        
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 303, 320, 1)];
+        line.backgroundColor = [UIColor lightGrayColor];
+        
+        [headerView addSubview:line];
+        
+        self.tableView.tableHeaderView = headerView;
+        
+        [line release];
+        
+        UIWebView* web = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)] autorelease];
+        
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:WP_POST_DATE_FORMAT];
+        
+        NSString* postHtml = [NSString stringWithFormat:@"<html><head><link href='default.css' rel='stylesheet' type='text/css' /></head><body><div id='maincontent' class='content'><div class='post'><div id='title'>%@</div><div>%@</div><div id='singlentry' class='left-justified'>%@</div></div></div></body></html>",
+                              post.post.title,
+                              [df stringFromDate:post.post.postDate],
+                              post.post.content];
+        
+        [df release];
+        NSString *path = [[NSBundle mainBundle] bundlePath];
+        NSURL *baseURL = [NSURL fileURLWithPath:path];
+        
+        [web loadHTMLString:postHtml baseURL:baseURL];
+        
+        web.delegate = self;
+        
+        [self.tableView insertSubview:web aboveSubview:self.tableView.tableHeaderView];
+        
+        [self showActivity:YES];
+    } 
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
     if (navigationType == UIWebViewNavigationTypeLinkClicked)
 	{
 		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:[[request URL] absoluteString]] applyAnimated:YES]];
@@ -125,7 +159,8 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)webViewDidFinishLoad:(UIWebView *)webView {	
+- (void)webViewDidFinishLoad:(UIWebView *)webView 
+{	
     [self showActivity:NO];
 	
     CGSize webViewSize = [webView sizeThatFits:CGSizeZero];
@@ -155,34 +190,46 @@
     
 	self.tableView.tableHeaderView = headerView;
 
-//    [self.view addSubview:webView];
-    
     [line release];
  }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)didSelectObject:(id)object atIndexPath:(NSIndexPath*)indexPath
 {
+    WordPressPostModel* post = (WordPressPostModel *)self.dataSource.model;
+    
 	if (indexPath.row == 0)
 	{
-		if (_post.commentCount > 0)
+		if (post.post.commentCount > 0)
 		{
-			WordPressCommentViewController* commentview = [[WordPressCommentViewController alloc] initWithPost:_post];
+			WordPressCommentViewController* commentview = [[WordPressCommentViewController alloc] initWithPost:post.post];
 			[self.navigationController pushViewController:commentview animated:YES];
 			[commentview release];
 		}
 		else 
 		{
-			[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:[NSString stringWithFormat:@"tt://blog/post/comment/%d", _post.postId]] 
+			[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:[NSString stringWithFormat:@"tt://blog/post/comment/%d", post.post.postId]] 
 													applyAnimated:YES]];			
 		}
 
 		return;
 	}
+    else if ([post.post.commentStatus isEqualToString:@"open"] && (indexPath.row == 1) && (post.post.commentCount > 0))
+    {
+        [[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:[NSString stringWithFormat:@"tt://blog/post/comment/%d", post.post.postId]] 
+                                                applyAnimated:YES]]; 
+    }
 	else 
 	{
 		[super didSelectObject:object atIndexPath:indexPath];
 	}
 	
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (id<UITableViewDelegate>)createDelegate {
+	return [[[TTTableViewNetworkEnabledDelegate alloc] initWithController:self 
+                                                          withDragRefresh:YES 
+                                                       withInfiniteScroll:NO] autorelease];
 }
 @end

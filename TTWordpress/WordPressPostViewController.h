@@ -11,10 +11,13 @@
 @class WordPressPost;
 
 @interface WordPressPostViewController : WordPressBaseTableViewController <UIWebViewDelegate> {
-	WordPressPost   *_post;
     TTActivityLabel *_activityView;
+    
+    BOOL            _postLoaded;
 }
 
 - (id)initWithPost:(WordPressPost*)post;
+- (id)initWithPostId:(NSInteger)postId;
+- (id)initWithApiUrl:(NSString *)url;
 
 @end

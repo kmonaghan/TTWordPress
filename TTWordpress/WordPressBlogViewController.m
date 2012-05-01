@@ -77,8 +77,17 @@
 {
 	if([object isKindOfClass:[WordPressPost class]])
 	{
-		WordPressPostViewController* postview = [[WordPressPostViewController alloc] initWithPost:object];
-		[self.navigationController pushViewController:postview animated:YES];
+		WordPressPostViewController* postview;
+        if (WP_LOAD_POST)
+        {
+            WordPressPost* selectedPost = (WordPressPost *)object;
+            postview = [[WordPressPostViewController alloc] initWithPostId:selectedPost.postId];
+        }
+        else
+        {
+            postview = [[WordPressPostViewController alloc] initWithPost:object];
+		}
+        [self.navigationController pushViewController:postview animated:YES];
 		[postview release];
 
 	}
