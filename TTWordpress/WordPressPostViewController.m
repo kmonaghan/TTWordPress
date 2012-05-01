@@ -225,4 +225,11 @@
 	}
 	
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (id<UITableViewDelegate>)createDelegate {
+	return [[[TTTableViewNetworkEnabledDelegate alloc] initWithController:self 
+                                                          withDragRefresh:YES 
+                                                       withInfiniteScroll:NO] autorelease];
+}
 @end

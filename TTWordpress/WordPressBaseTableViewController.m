@@ -25,9 +25,8 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id<UITableViewDelegate>)createDelegate {
-	return [[[TTTableViewNetworkEnabledDelegate alloc] initWithController:self 
-                                                          withDragRefresh:YES 
-                                                       withInfiniteScroll:NO] autorelease];
+	return [[[TTTableViewVarHeightDelegate alloc] initWithController:self] autorelease];
 }
+
 
 @end
