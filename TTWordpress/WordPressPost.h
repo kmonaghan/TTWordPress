@@ -46,5 +46,7 @@
 
 @property (nonatomic, retain) NSMutableArray*	categories;
 
++ (id)initWithDetails:(NSDictionary *)details;
+
 - (NSString *) getThumbnailUrl;
 @end

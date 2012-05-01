@@ -28,4 +28,5 @@
 	return [[[TTTableViewVarHeightDelegate alloc] initWithController:self] autorelease];
 }
 
+
 @end
