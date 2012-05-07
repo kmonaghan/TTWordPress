@@ -10,4 +10,5 @@
 	NSString* _url;
 }
 
+@property(nonatomic, retain) NSString *url;
 @end

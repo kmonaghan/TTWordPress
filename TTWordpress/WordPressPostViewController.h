@@ -14,6 +14,10 @@
     TTActivityLabel *_activityView;
     
     BOOL            _postLoaded;
+    
+    WordPressPost   *_post;
+    NSInteger       _postId;
+    NSString        *_url;
 }
 
 - (id)initWithPost:(WordPressPost*)post;

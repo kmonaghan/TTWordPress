@@ -8,6 +8,7 @@
 
 #import "WordPressPostModel.h"
 #import "WordPressPost.h"
+#import "WordPressComment.h"
 #import "TTWordPress.h"
 
 @implementation WordPressPostModel
@@ -20,7 +21,7 @@
     
 	if (self) 
     {
-		_url = [[NSString stringWithFormat:@"%@?json=get_post&post_id=%d", WP_BASE_URL, postId] retain];
+		self.url = [NSString stringWithFormat:@"?json=get_post&post_id=%d", postId];
 	}
 	return self;    
 }
@@ -49,7 +50,7 @@
     {
         _hasPost = NO;
         
-		_url = [url retain];
+		self.url = url;
 	}
     
 	return self;     
@@ -74,6 +75,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void) processResponse:(NSDictionary*) response 
 {
+    NSLog(@"response: %@", response);
+    
     if ([response objectForKey:@"post"])
     {
         _post = [WordPressPost initWithDetails:[response objectForKey:@"post"]];
@@ -83,5 +86,4 @@
         _post = [WordPressPost initWithDetails:[response objectForKey:@"page"]];
     }
 }
-
 @end

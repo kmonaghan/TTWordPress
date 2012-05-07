@@ -21,20 +21,25 @@
 @synthesize items = _items;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (id) init {
-	if (self = [super init]) {
+- (id) init 
+{
+	self = [super init];
+    
+    if (self) 
+    {
 		_totalResultsRetrieved = 0;
 		_totalResultsOnServer = 0;
 		_page = 1;
 		
-		_url = [NSString stringWithFormat:@"%@?json=get_recent_posts", WP_BASE_URL];
+		self.url = @"?json=get_recent_posts";
 	}
 	return self;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (id) initWithAuthorId:(NSInteger)authorId {
-	self = [self initWithApiUrl:[NSString stringWithFormat:@"%@?json=get_author_posts&author_id=%d", WP_BASE_URL, authorId]];
+- (id) initWithAuthorId:(NSInteger)authorId 
+{
+	self = [self initWithApiUrl:[NSString stringWithFormat:@"?json=get_author_posts&author_id=%d", authorId]];
     
     if (self)
     {
@@ -45,7 +50,10 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id) initWithCategoryId:(NSInteger)categoryId {
-	if (self = [self initWithApiUrl:[NSString stringWithFormat:@"%@?json=get_category_posts&id=%d", WP_BASE_URL, categoryId]]) {
+	self = [self initWithApiUrl:[NSString stringWithFormat:@"?json=get_category_posts&id=%d", categoryId]];
+    
+    if (self) 
+    {
 		
 	}
 	return self;	
@@ -58,7 +66,7 @@
 		_totalResultsOnServer = 0;
 		_page = 1;
 		
-		_url = [url retain];
+		self.url = url;
 	}
 	return self;	
 }
@@ -77,20 +85,18 @@
 	if (more == YES) 
     {
 		_page++;
-		fetchURL = [NSString stringWithFormat:@"%@&page=%d", _url, _page];
+		fetchURL = [NSString stringWithFormat:@"%@%@&page=%d", WP_BASE_URL, _url, _page];
 	} 
     else 
     {
         _page = 1;
 		TT_RELEASE_SAFELY(_items);
 		_totalResultsRetrieved = 0;
-		fetchURL = [_url copy];
+		fetchURL = [NSString stringWithFormat:@"%@%@", WP_BASE_URL, _url];
 	}
 	
-	if (!self.isLoading) {
-		
-		NSLog(@"Fetching URL: %@", fetchURL);
-		
+	if (!self.isLoading) 
+    {
 		TTURLRequest* request = [TTURLRequest
 								 requestWithURL: fetchURL
 								 delegate: self];

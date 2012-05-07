@@ -49,4 +49,5 @@
 + (id)initWithDetails:(NSDictionary *)details;
 
 - (NSString *) getThumbnailUrl;
+- (void)addComment:(NSDictionary *)details;
 @end

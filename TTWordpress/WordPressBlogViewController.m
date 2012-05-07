@@ -9,6 +9,7 @@
 
 #import "WordPressBlogViewController.h"
 #import "WordPressDataSource.h"
+#import "WordPressPostsModel.h"
 #import "WordPressPostViewController.h"
 #import "WordPressPost.h"
 
