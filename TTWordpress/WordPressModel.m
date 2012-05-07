@@ -6,11 +6,14 @@
 //  Copyright (c) 2012 Crayons and Brown Paper. All rights reserved.
 //
 
+#import "TTWordPress.h"
 #import "WordPressModel.h"
 
 #import <extThree20JSON/extThree20JSON.h>
 
 @implementation WordPressModel
+@synthesize url = _url;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void) dealloc {
 	TT_RELEASE_SAFELY(_url);
@@ -21,12 +24,12 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)load:(TTURLRequestCachePolicy)cachePolicy more:(BOOL)more 
 {
-    NSLog(@"_url: %@", _url);
+    //NSLog(@"fetching url: %@", [NSString stringWithFormat:@"%@%@", WP_BASE_URL, _url]);
     
-	if (!self.isLoading) 
+    if (!self.isLoading) 
     {
 		TTURLRequest* request = [TTURLRequest
-								 requestWithURL: _url
+								 requestWithURL:[NSString stringWithFormat:@"%@%@", WP_BASE_URL, _url]
 								 delegate: self];
 		
 		request.cachePolicy = cachePolicy;

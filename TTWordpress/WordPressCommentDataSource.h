@@ -6,8 +6,13 @@
 //  Copyright 2011 Crayons and Brown Paper. All rights reserved.
 //
 
-@interface WordPressCommentDataSource : TTListDataSource {
+@class WordPressPostModel;
+@class WordPressPost;
 
+@interface WordPressCommentDataSource : TTListDataSource {
+    WordPressPostModel *_localModel;
 }
+
+- (id)initWithPost:(WordPressPost *)post;
 
 @end

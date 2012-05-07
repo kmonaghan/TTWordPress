@@ -18,6 +18,28 @@
 @synthesize parent		= _parent;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (id)initWithDetails:(NSDictionary *)details
+{
+    self = [super init];
+    
+	if (self)
+	{
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        
+        self.commentId = [[details objectForKey:@"id"] intValue];
+        self.name = [details objectForKey:@"name"];
+        self.url = [details objectForKey:@"url"];
+        self.commentDate = [df dateFromString:[details objectForKey:@"date"]];
+        self.content = [details objectForKey:@"content"];
+        self.parent = [[details objectForKey:@"parent"] intValue];
+        
+        [df release];
+	}
+	return self;    
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void) dealloc {
 	TT_RELEASE_SAFELY(_name);
 	TT_RELEASE_SAFELY(_url);

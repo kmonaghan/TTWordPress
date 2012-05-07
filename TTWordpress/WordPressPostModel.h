@@ -20,5 +20,4 @@
 - (id) initWithPostId:(NSInteger)postId;
 - (id) initWithPost:(WordPressPost *)post;
 - (id) initWithApiUrl:(NSString *)url;
-
 @end
