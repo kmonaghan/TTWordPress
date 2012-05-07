@@ -87,25 +87,16 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	/*
-	if ([_localModel totalResultsRetrieved] < [_localModel totalResultsOnServer]) {
-		return [_localModel totalResultsRetrieved] + 1;
-	} else {
-		return [_localModel totalResultsRetrieved];
-	}
-	 */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
+{
 	return [_localModel totalResultsRetrieved];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (id)tableView:(UITableView*)tableView objectForRowAtIndexPath:(NSIndexPath*)indexPath {
+- (id)tableView:(UITableView*)tableView objectForRowAtIndexPath:(NSIndexPath*)indexPath 
+{
 	if (indexPath.row < self.items.count) {
 		return [self.items objectAtIndex:indexPath.row];
-	/*
-	} else if (indexPath.row == (self.items.count)) {
-		return [TTTableMoreButton itemWithText:@"Load More..."];
-	*/
 	} else {
 		return nil;
 	}

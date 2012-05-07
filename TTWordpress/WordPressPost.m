@@ -58,18 +58,7 @@
         
         for (NSDictionary* comment in [details objectForKey:@"comments"])
         {
-            WordPressComment* commentItem = [[WordPressComment alloc] init];
-            
-            commentItem.commentId = [[comment objectForKey:@"id"] intValue];
-            commentItem.name = [comment objectForKey:@"name"];
-            commentItem.url = [comment objectForKey:@"url"];
-            commentItem.commentDate = [df dateFromString:[comment objectForKey:@"date"]];
-            commentItem.content = [comment objectForKey:@"content"];
-            commentItem.parent = [[comment objectForKey:@"parent"] intValue];
-            
-            [wpItem.comments addObject:commentItem];
-            
-            TT_RELEASE_SAFELY(commentItem);
+            [wpItem.comments addObject:[[WordPressComment alloc] initWithDetails:comment]];
         }
     }
     
@@ -149,4 +138,12 @@
 	
 	return nil;
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)addComment:(NSDictionary *)details
+{
+    [self.comments addObject:[[WordPressComment alloc] initWithDetails:details]];
+    self.commentCount++;
+}
+
 @end

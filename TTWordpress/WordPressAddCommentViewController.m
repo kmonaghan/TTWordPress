@@ -31,10 +31,29 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (id)initWithPost:(WordPressPost *)post withTarget:(id)target
+{
+	self = [super initWithNibName:nil bundle:nil];
+    
+    if (self) 
+	{
+		_postId = post.postId;
+        _post = [post retain];
+        _target = target;
+        
+		self.delegate = self;
+        
+        NSLog(@"_post id: %d", _post.postId);
+	}
+	
+	return self;    
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
 	TT_RELEASE_SAFELY(nameField);
 	TT_RELEASE_SAFELY(emailField);
-	
+	TT_RELEASE_SAFELY(_post);
     /*
     if (_request && _request.isLoading)
     {
@@ -43,6 +62,8 @@
     */
     
     TT_RELEASE_SAFELY(_request);
+    
+    _target = nil;
     
 	[super dealloc];
 }
@@ -152,10 +173,20 @@
 	TTDASSERT([response.rootObject isKindOfClass:[NSDictionary class]]);
 	
 	NSDictionary* feed = response.rootObject;
-	
-	if (([[feed objectForKey:@"status"] isEqualToString:@"pending"])
+
+    if (([[feed objectForKey:@"status"] isEqualToString:@"pending"])
         || ([[feed objectForKey:@"status"] isEqualToString:@"ok"]))
     {
+        if (_post)
+        {
+            [_post addComment:feed];
+            
+            if (_target)
+            {
+                [_target reloadComments];
+            }
+        }
+        
 		[self dismissPopupViewControllerAnimated:YES];
 	} else {
         [super showAnimationDidStop];

@@ -25,4 +25,5 @@
 @property (nonatomic, copy)   NSString*		content;
 @property (nonatomic)   NSInteger		parent;
 
+- (id)initWithDetails:(NSDictionary *)details;
 @end

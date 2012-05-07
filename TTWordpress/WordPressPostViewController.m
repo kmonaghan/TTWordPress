@@ -12,8 +12,11 @@
 #import "WordPressPostModel.h"
 #import "WordPressPost.h"
 #import "WordPressCommentViewController.h"
+#import "WordPressAddCommentViewController.h"
 #import "WordPressCategory.h"
 #import "TableItemDisclosure.h"
+
+#import <Three20UICommon/UIViewControllerAdditions.h>
 
 @implementation WordPressPostViewController
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,11 +26,7 @@
     if (self) 
     {
         self.hidesBottomBarWhenPushed = YES;
-        
-        _postLoaded = YES;
-
-        self.dataSource = [[[WordPressPostDataSource alloc] initWithPost:post] autorelease];
-
+        _post = [post retain];
     }
     
 	return self;	
@@ -42,7 +41,7 @@
     {
 		self.hidesBottomBarWhenPushed = YES;
         
-        self.dataSource = [[[WordPressPostDataSource alloc] initWithPostId:postId] autorelease];
+        _postId = postId;
     }
     
 	return self; 
@@ -57,16 +56,37 @@
     {
 		self.hidesBottomBarWhenPushed = YES;
         
-        self.dataSource = [[[WordPressPostDataSource alloc] initWithApiUrl:url] autorelease];
+        _url = [url retain];
     }
     
 	return self; 
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)createModel 
+{
+    if (_post)
+    {
+        _postLoaded = YES;
+        
+        self.dataSource = [[[WordPressPostDataSource alloc] initWithPost:_post] autorelease];
+    }
+    else if (_postId)
+    {
+        self.dataSource = [[[WordPressPostDataSource alloc] initWithPostId:_postId] autorelease];
+    }
+    else if (_url)
+    {
+        self.dataSource = [[[WordPressPostDataSource alloc] initWithApiUrl:_url] autorelease];
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc 
 {
     TT_RELEASE_SAFELY(_activityView);
+    TT_RELEASE_SAFELY(_post);
+    TT_RELEASE_SAFELY(_url);
     
 	[super dealloc];
 }
@@ -92,13 +112,6 @@
         
         _activityView.hidden = YES;
     }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)loadView 
-{
-	[super loadView];
-	
 }	
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -108,7 +121,25 @@
 
     if (firstTime || _postLoaded)
     {
+        if (_url)
+        {
+            TT_RELEASE_SAFELY(_url);
+        }
+        
+        if (_postId)
+        {
+            _postId = 0;
+        }
+        
+        
         WordPressPostModel* post = (WordPressPostModel *)self.dataSource.model;
+        
+        if (_post)
+        {
+            TT_RELEASE_SAFELY(_post);
+        }
+        
+        _post = [post.post retain];
         
         _postLoaded = NO;
         
@@ -191,7 +222,21 @@
 	self.tableView.tableHeaderView = headerView;
 
     [line release];
- }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void) makePost
+{
+    WordPressPostModel* post = (WordPressPostModel *)self.dataSource.model;
+    
+    WordPressAddCommentViewController *controller = [[[WordPressAddCommentViewController alloc] initWithPost:post.post withTarget:self] autorelease];
+    UIViewController *topController = [TTNavigator navigator].topViewController; 
+    controller.delegate = controller; 
+    topController.popupViewController = controller;
+    controller.superController = topController; 
+    
+    [controller showInView:controller.view animated:YES]; 
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)didSelectObject:(id)object atIndexPath:(NSIndexPath*)indexPath
@@ -208,16 +253,14 @@
 		}
 		else 
 		{
-			[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:[NSString stringWithFormat:@"tt://blog/post/comment/%d", post.post.postId]] 
-													applyAnimated:YES]];			
+            [self makePost];
 		}
 
 		return;
 	}
     else if ([post.post.commentStatus isEqualToString:@"open"] && (indexPath.row == 1) && (post.post.commentCount > 0))
     {
-        [[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:[NSString stringWithFormat:@"tt://blog/post/comment/%d", post.post.postId]] 
-                                                applyAnimated:YES]]; 
+        [self makePost]; 
     }
 	else 
 	{
@@ -231,5 +274,14 @@
 	return [[[TTTableViewNetworkEnabledDelegate alloc] initWithController:self 
                                                           withDragRefresh:YES 
                                                        withInfiniteScroll:NO] autorelease];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)reloadComments
+{
+    _postLoaded = YES;
+    
+    self.dataSource = [[[WordPressPostDataSource alloc] initWithPost:_post] autorelease];
+    [self updateView];
 }
 @end
