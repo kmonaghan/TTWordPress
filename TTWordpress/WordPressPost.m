@@ -8,6 +8,9 @@
 
 #import "WordPressPost.h"
 #import "WordPressCategory.h"
+#import "WordPressComment.h"
+
+#import "GTMNSString+HTML.h"
 
 @implementation WordPressPost
 @synthesize postId			= _postId;
@@ -28,6 +31,61 @@
 @synthesize commentStatus	= _commentStatus;
 
 @synthesize categories		= _categories;
+
++ (id)initWithDetails:(NSDictionary *)details
+{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+	[df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    WordPressPost* wpItem = [[WordPressPost alloc] init];
+    
+    wpItem.postId = [[details objectForKey:@"id"] intValue];
+    wpItem.title = [[details objectForKey:@"title"] gtm_stringByUnescapingFromHTML];
+    wpItem.postDate = [df dateFromString:[details objectForKey:@"date"]];
+    wpItem.content = [details objectForKey:@"content"];
+    wpItem.excerpt = [details objectForKey:@"excerpt"];
+    wpItem.postUrl = [details objectForKey:@"url"];
+    wpItem.author = [[details objectForKey:@"author"] objectForKey:@"name"];
+    wpItem.authorId = [[[details objectForKey:@"author"] objectForKey:@"id"] intValue];
+    
+    wpItem.attachments = [details objectForKey:@"attachments"];
+    
+    wpItem.commentCount = [[details objectForKey:@"comment_count"] intValue];
+    
+    if (wpItem.commentCount > 0)
+    {
+        wpItem.comments = [NSMutableArray arrayWithCapacity:wpItem.commentCount];
+        
+        for (NSDictionary* comment in [details objectForKey:@"comments"])
+        {
+            [wpItem.comments addObject:[[WordPressComment alloc] initWithDetails:comment]];
+        }
+    }
+    
+    wpItem.commentStatus = [details objectForKey:@"comment_status"];
+    
+    wpItem.categories = [NSMutableArray arrayWithCapacity:1];
+    
+    for (NSDictionary* category in [details objectForKey:@"categories"])
+    {
+        WordPressCategory* categoryItem = [[WordPressCategory alloc] init];
+        
+        categoryItem.categoryId = [[category objectForKey:@"id"] intValue];
+        categoryItem.slug = [category objectForKey:@"slug"];
+        categoryItem.title = [category objectForKey:@"title"];
+        categoryItem.description = [category objectForKey:@"description"];
+        categoryItem.parent = [category objectForKey:@"parent"];
+        categoryItem.postCount = [[category objectForKey:@"postCount"] intValue];
+        
+        [wpItem.categories addObject:categoryItem];
+        
+        TT_RELEASE_SAFELY(categoryItem);
+    }
+    
+    [df release];
+
+    return wpItem;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id) init
@@ -80,4 +138,12 @@
 	
 	return nil;
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)addComment:(NSDictionary *)details
+{
+    [self.comments addObject:[[WordPressComment alloc] initWithDetails:details]];
+    self.commentCount++;
+}
+
 @end

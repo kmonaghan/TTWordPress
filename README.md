@@ -1,6 +1,12 @@
-TTWordPress is a library I wrote to easily display a WordPress blog in an iOS app.  I originally wrote it for the Visionary.ie app (http://itunes.apple.com/ie/app/visionary-photography/id427412034?mt=8) and was then able to expand on that to create the Broadsheet.ie app (http://itunes.apple.com/ie/app/broadsheet-ie/id413093424?mt=8).  Since I found it useful, I thought I'd release it into the wild and see what happens.
+TTWordPress
+===========
+
+TTWordPress is a library I wrote to easily display a WordPress blog in an iOS app.  I originally wrote it for the Visionary.ie app (http://itunes.apple.com/ie/app/visionary-photography/id427412034?mt=8) and was then able to expand on that to create the Broadsheet.ie app (http://itunes.apple.com/ie/app/broadsheet-ie/id413093424?mt=8). Since I found it useful, I thought I'd release it into the wild and see what happens.
 
 To provide the data from a WordPress blog is a nice machine readable format, the excellent JSON API (http://wordpress.org/extend/plugins/json-api/) plugin is used.  Obviously, it needs to be installed for the iOS to be able to retrieve anything but that's a trivial matter.  If you want users to be able to comment on posts, you need to activate the 'Respond' controller in the API settings.  On the iOS side of things, the library uses Three20 (http://three20.info/) for the consuming the JSON and displaying the information in tables.
+
+Usage
+-----
 
 To use the library in your own app, you first need to add Three20 to your project (if you're not already using it).  Open the example TTWordPress project and copy the WordPress folder and all its contents to your project.
 

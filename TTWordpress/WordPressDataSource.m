@@ -7,7 +7,7 @@
 //
 
 #import "WordPressDataSource.h"
-#import "WordPressPostModel.h"
+#import "WordPressPostsModel.h"
 #import "WordPressPost.h"
 #import "WordPressPostTableCell.h"
 
@@ -18,7 +18,7 @@
 {
 	if (self = [super init])
 	{
-		_localModel = [[WordPressPostModel alloc] init];
+		_localModel = [[WordPressPostsModel alloc] init];
 	}
 	
 	return self;
@@ -29,28 +29,29 @@
 {
 	if (self = [super init])
 	{
-		_localModel = [[WordPressPostModel alloc] initWithAuthorId:authorId];
+		_localModel = [[WordPressPostsModel alloc] initWithAuthorId:authorId];
 	}
 	
 	return self;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id) initWithCategoryId:(NSInteger)categoryId
 {
 	if (self = [super init])
 	{
-		_localModel = [[WordPressPostModel alloc] initWithCategoryId:categoryId];
+		_localModel = [[WordPressPostsModel alloc] initWithCategoryId:categoryId];
 	}
 	
 	return self;	
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (id) initWithUrl:(NSString *)url
+- (id) initWithApiUrl:(NSString *)url
 {
 	if (self = [super init])
 	{
-		_localModel = [[WordPressPostModel alloc] initWithUrl:url];
+		_localModel = [[WordPressPostsModel alloc] initWithApiUrl:url];
 	}
 	
 	return self;
@@ -86,25 +87,16 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	/*
-	if ([_localModel totalResultsRetrieved] < [_localModel totalResultsOnServer]) {
-		return [_localModel totalResultsRetrieved] + 1;
-	} else {
-		return [_localModel totalResultsRetrieved];
-	}
-	 */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
+{
 	return [_localModel totalResultsRetrieved];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (id)tableView:(UITableView*)tableView objectForRowAtIndexPath:(NSIndexPath*)indexPath {
+- (id)tableView:(UITableView*)tableView objectForRowAtIndexPath:(NSIndexPath*)indexPath 
+{
 	if (indexPath.row < self.items.count) {
 		return [self.items objectAtIndex:indexPath.row];
-	/*
-	} else if (indexPath.row == (self.items.count)) {
-		return [TTTableMoreButton itemWithText:@"Load More..."];
-	*/
 	} else {
 		return nil;
 	}

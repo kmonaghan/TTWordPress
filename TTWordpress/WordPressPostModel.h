@@ -2,28 +2,22 @@
 //  WordPressPostModel.h
 //  TTWordPress
 //
-//  Created by Karl Monaghan on 26/12/2010.
-//  Copyright 2010 Crayons and Brown Paper. All rights reserved.
+//  Created by Karl Monaghan on 23/04/2012.
+//  Copyright (c) 2012 Crayons and Brown Paper. All rights reserved.
 //
 
-@interface WordPressPostModel : TTURLRequestModel {
-	NSString* _url;
-	
-	NSMutableArray*  _items;
-	
-	int _page;
-	int _totalResultsRetrieved;
-	int _totalResultsOnServer;
+#import "WordPressModel.h"
+
+@class WordPressPost;
+
+@interface WordPressPostModel : WordPressModel {
+	WordPressPost *_post;
+    BOOL          _hasPost;
 }
 
-@property (nonatomic, copy) NSMutableArray*  items;
+@property (nonatomic, retain) WordPressPost*  post;
 
-- (int) totalResultsRetrieved;
-- (int) totalResultsOnServer;
-
-- (id) initWithUrl:(NSString *)url;
-- (id) initWithAuthorId:(NSString *)authorId;
-- (id) initWithCategoryId:(NSString *)categoryId;
-
+- (id) initWithPostId:(NSInteger)postId;
+- (id) initWithPost:(WordPressPost *)post;
+- (id) initWithApiUrl:(NSString *)url;
 @end
-

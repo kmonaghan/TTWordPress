@@ -10,7 +10,7 @@
 
 @class WordPressPost;
 
-@interface WordPressCommentViewController : WordPressBaseTableViewController {
+@interface WordPressCommentViewController : WordPressBaseTableViewController <TTPostControllerDelegate> {
 	WordPressPost*	_post;
 }
 

@@ -6,8 +6,15 @@
 //  Copyright 2010 Crayons and Brown Paper. All rights reserved.
 //
 
-@interface WordPressPostDataSource : TTListDataSource {
+@class WordPressPostModel;
+@class WordPressPost;
 
+@interface WordPressPostDataSource : TTListDataSource {
+    WordPressPostModel *_localModel;
 }
+
+- (id)initWithPost:(WordPressPost *)post;
+- (id)initWithPostId:(NSInteger)postId;
+- (id)initWithApiUrl:(NSString *)url;
 
 @end

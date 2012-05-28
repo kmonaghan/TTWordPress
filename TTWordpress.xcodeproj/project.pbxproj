@@ -45,7 +45,6 @@
 		CB3D3010139BDC0200B94586 /* WPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D300F139BDC0200B94586 /* WPTabBarController.m */; };
 		CB49FEE4156AB3D000F1B1B3 /* WordPressImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB49FEE3156AB3D000F1B1B3 /* WordPressImageViewController.m */; };
 		CB49FF29156ADA5400F1B1B3 /* TTWordPressScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB49FF28156ADA5400F1B1B3 /* TTWordPressScrollView.m */; };
-		CB7C2F09139D684B000711A9 /* README in Resources */ = {isa = PBXBuildFile; fileRef = CB7C2F08139D684B000711A9 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +236,10 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CB0F1224154EA8260060C8F6 /* WordPressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordPressModel.m; path = /Users/karl/Projects/TTWordPress/TTWordpress/WordPressModel.m; sourceTree = "<absolute>"; };
+		CB0F1225154EA8260060C8F6 /* WordPressPostsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordPressPostsModel.m; path = /Users/karl/Projects/TTWordPress/TTWordpress/WordPressPostsModel.m; sourceTree = "<absolute>"; };
+		CB0F1226154EA8260060C8F6 /* WordPressPostsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordPressPostsModel.h; path = /Users/karl/Projects/TTWordPress/TTWordpress/WordPressPostsModel.h; sourceTree = "<absolute>"; };
+		CB0F1227154EA8260060C8F6 /* WordPressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordPressModel.h; path = /Users/karl/Projects/TTWordPress/TTWordpress/WordPressModel.h; sourceTree = "<absolute>"; };
 		CB23B280139D0F600036E433 /* default.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = default.css; path = Resources/default.css; sourceTree = "<group>"; };
 		CB298CED13B2834E009311E8 /* 166-newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "166-newspaper.png"; sourceTree = "<group>"; };
 		CB38A005139958FF00B88AE2 /* TTWordpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTWordpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,7 +294,6 @@
 		CB49FEE3156AB3D000F1B1B3 /* WordPressImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordPressImageViewController.m; path = ../../../../../Users/karl/Projects/TTWordPress/TTWordpress/WordPressImageViewController.m; sourceTree = "<group>"; };
 		CB49FF27156ADA5400F1B1B3 /* TTWordPressScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTWordPressScrollView.h; path = ../../../../../Users/karl/Projects/TTWordPress/TTWordpress/TTWordPressScrollView.h; sourceTree = "<group>"; };
 		CB49FF28156ADA5400F1B1B3 /* TTWordPressScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTWordPressScrollView.m; path = ../../../../../Users/karl/Projects/TTWordPress/TTWordpress/TTWordPressScrollView.m; sourceTree = "<group>"; };
-		CB7C2F08139D684B000711A9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = TTWordpress/README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,7 +411,6 @@
 		CB389FFA139958FE00B88AE2 = {
 			isa = PBXGroup;
 			children = (
-				CB7C2F08139D684B000711A9 /* README */,
 				CB38A00F139958FF00B88AE2 /* TTWordpress */,
 				CB38A008139958FF00B88AE2 /* Frameworks */,
 				CB38A006139958FF00B88AE2 /* Products */,
@@ -519,6 +520,10 @@
 			isa = PBXGroup;
 			children = (
 				CB38A0D313995A8900B88AE2 /* Object */,
+				CB0F1227154EA8260060C8F6 /* WordPressModel.h */,
+				CB0F1224154EA8260060C8F6 /* WordPressModel.m */,
+				CB0F1226154EA8260060C8F6 /* WordPressPostsModel.h */,
+				CB0F1225154EA8260060C8F6 /* WordPressPostsModel.m */,
 				CB38A0D013995A2F00B88AE2 /* WordPressPostModel.h */,
 				CB38A0D113995A2F00B88AE2 /* WordPressPostModel.m */,
 			);
@@ -806,7 +811,6 @@
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				CB38A014139958FF00B88AE2 /* InfoPlist.strings in Resources */,
 				CB23B281139D0F600036E433 /* default.css in Resources */,
-				CB7C2F09139D684B000711A9 /* README in Resources */,
 				CB298CEE13B2834E009311E8 /* 166-newspaper.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
