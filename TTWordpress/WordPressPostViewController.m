@@ -12,6 +12,8 @@
 #import "WordPressPost.h"
 #import "WordPressCommentViewController.h"
 #import "WordPressCategory.h"
+#import "WordPressImageViewController.h"
+
 #import "TableItemDisclosure.h"
 
 @implementation WordPressPostViewController
@@ -118,7 +120,23 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     if (navigationType == UIWebViewNavigationTypeLinkClicked)
 	{
-		[[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:[[request URL] absoluteString]] applyAnimated:YES]];
+        NSArray *parts = [[[request URL] absoluteString] componentsSeparatedByString:@"."];
+        
+        if ([[parts lastObject] isEqualToString:@"jpg"] || [[parts lastObject] isEqualToString:@"jpeg"] 
+            || [[parts lastObject] isEqualToString:@"png"]
+            || [[parts lastObject] isEqualToString:@"gif"])
+        {
+            NSLog(@"captured image: %@", [[request URL] absoluteString]);
+            
+            WordPressImageViewController* commentview = [[WordPressImageViewController alloc] initWithUrl:[[request URL] absoluteString]];
+			[self.navigationController pushViewController:commentview animated:YES];
+			[commentview release];
+        }
+        else
+        {
+            [[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:[[request URL] absoluteString]] applyAnimated:YES]];
+        }
+        
 		return NO;
 	}
 	return YES;
@@ -154,8 +172,6 @@
     [webView addSubview:line];
     
 	self.tableView.tableHeaderView = headerView;
-
-//    [self.view addSubview:webView];
     
     [line release];
  }

@@ -43,6 +43,8 @@
 		CB3D2FF2139A607F00B94586 /* WordPressCommentTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D2FEF139A607F00B94586 /* WordPressCommentTableCell.m */; };
 		CB3D2FF7139A659800B94586 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D2FF6139A659800B94586 /* GTMNSString+HTML.m */; };
 		CB3D3010139BDC0200B94586 /* WPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D300F139BDC0200B94586 /* WPTabBarController.m */; };
+		CB49FEE4156AB3D000F1B1B3 /* WordPressImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB49FEE3156AB3D000F1B1B3 /* WordPressImageViewController.m */; };
+		CB49FF29156ADA5400F1B1B3 /* TTWordPressScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB49FF28156ADA5400F1B1B3 /* TTWordPressScrollView.m */; };
 		CB7C2F09139D684B000711A9 /* README in Resources */ = {isa = PBXBuildFile; fileRef = CB7C2F08139D684B000711A9 /* README */; };
 /* End PBXBuildFile section */
 
@@ -285,6 +287,10 @@
 		CB3D2FF6139A659800B94586 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		CB3D300E139BDC0200B94586 /* WPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTabBarController.h; sourceTree = "<group>"; };
 		CB3D300F139BDC0200B94586 /* WPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTabBarController.m; sourceTree = "<group>"; };
+		CB49FEE2156AB3D000F1B1B3 /* WordPressImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordPressImageViewController.h; path = ../../../../../Users/karl/Projects/TTWordPress/TTWordpress/WordPressImageViewController.h; sourceTree = "<group>"; };
+		CB49FEE3156AB3D000F1B1B3 /* WordPressImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordPressImageViewController.m; path = ../../../../../Users/karl/Projects/TTWordPress/TTWordpress/WordPressImageViewController.m; sourceTree = "<group>"; };
+		CB49FF27156ADA5400F1B1B3 /* TTWordPressScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTWordPressScrollView.h; path = ../../../../../Users/karl/Projects/TTWordPress/TTWordpress/TTWordPressScrollView.h; sourceTree = "<group>"; };
+		CB49FF28156ADA5400F1B1B3 /* TTWordPressScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTWordPressScrollView.m; path = ../../../../../Users/karl/Projects/TTWordPress/TTWordpress/TTWordPressScrollView.m; sourceTree = "<group>"; };
 		CB7C2F08139D684B000711A9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = TTWordpress/README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -471,6 +477,7 @@
 				CB3D2FE4139A604800B94586 /* Table */,
 				CB38A0B5139959C500B88AE2 /* Controller */,
 				CB38A0B7139959E500B88AE2 /* Model */,
+				CB49FF26156ADA1D00F1B1B3 /* Views */,
 				CB23B27F139D0F420036E433 /* Resources */,
 			);
 			name = WordPress;
@@ -489,6 +496,8 @@
 				CB38A0BF139959FB00B88AE2 /* WordPressCommentViewController.m */,
 				CB38A0C0139959FB00B88AE2 /* WordPressAddCommentViewController.h */,
 				CB38A0C1139959FB00B88AE2 /* WordPressAddCommentViewController.m */,
+				CB49FEE2156AB3D000F1B1B3 /* WordPressImageViewController.h */,
+				CB49FEE3156AB3D000F1B1B3 /* WordPressImageViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -569,6 +578,15 @@
 				CB3D2FF6139A659800B94586 /* GTMNSString+HTML.m */,
 			);
 			name = "Google Toolbox for Mac";
+			sourceTree = "<group>";
+		};
+		CB49FF26156ADA1D00F1B1B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB49FF27156ADA5400F1B1B3 /* TTWordPressScrollView.h */,
+				CB49FF28156ADA5400F1B1B3 /* TTWordPressScrollView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -820,6 +838,8 @@
 				CB3D2FF2139A607F00B94586 /* WordPressCommentTableCell.m in Sources */,
 				CB3D2FF7139A659800B94586 /* GTMNSString+HTML.m in Sources */,
 				CB3D3010139BDC0200B94586 /* WPTabBarController.m in Sources */,
+				CB49FEE4156AB3D000F1B1B3 /* WordPressImageViewController.m in Sources */,
+				CB49FF29156ADA5400F1B1B3 /* TTWordPressScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
