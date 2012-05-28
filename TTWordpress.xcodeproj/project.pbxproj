@@ -45,6 +45,8 @@
 		CB3D3010139BDC0200B94586 /* WPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D300F139BDC0200B94586 /* WPTabBarController.m */; };
 		CB49FEE4156AB3D000F1B1B3 /* WordPressImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB49FEE3156AB3D000F1B1B3 /* WordPressImageViewController.m */; };
 		CB49FF29156ADA5400F1B1B3 /* TTWordPressScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB49FF28156ADA5400F1B1B3 /* TTWordPressScrollView.m */; };
+		CBC8B86315742584002D5F37 /* WordPressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F1224154EA8260060C8F6 /* WordPressModel.m */; };
+		CBC8B86415742584002D5F37 /* WordPressPostsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F1225154EA8260060C8F6 /* WordPressPostsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -822,6 +824,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC8B86315742584002D5F37 /* WordPressModel.m in Sources */,
+				CBC8B86415742584002D5F37 /* WordPressPostsModel.m in Sources */,
 				CB38A017139958FF00B88AE2 /* main.m in Sources */,
 				CB38A01A139958FF00B88AE2 /* TTWordpressAppDelegate.m in Sources */,
 				CB38A0C2139959FB00B88AE2 /* WordPressBaseTableViewController.m in Sources */,
