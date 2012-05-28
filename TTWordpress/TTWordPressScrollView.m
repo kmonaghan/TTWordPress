@@ -77,10 +77,6 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    CGRect mainframe = [[UIScreen mainScreen] applicationFrame];
-    
-    NSLog(@"main frame: %f %f", mainframe.size.width, mainframe.size.height);
-    // center the image as it becomes smaller than the size of the screen
     CGSize boundsSize = self.bounds.size;
     CGRect frameToCenter = imageView.frame;
 
