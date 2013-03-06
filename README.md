@@ -1,3 +1,4 @@
+DEPRECIATED use [KMWordPress](https://github.com/kmonaghan/KMWordPress) instead
 TTWordPress
 ===========
 
@@ -11,26 +12,26 @@ Usage
 To use the library in your own app, you first need to add Three20 to your project (if you're not already using it).  Open the example TTWordPress project and copy the WordPress folder and all its contents to your project.
 
 To point the library at your own blog, you need to edit the following line in TTWordPress.h:
-
+```
 #define WP_BASE_URL				@"http://ttwordpress.karlmonaghan.com/"
-
+```
 
 In this file, you can also change the default title for the latest posts view and the way dates are displayed for posts and comments.
 
 Then in your AppDelegate, add the following includes:
 
-
+```
 #import "WordPressBlogViewController.h"
 #import "WordPressAddCommentViewController.h"
-
+```
 
 Then add the following lines:
-
+```
 [map from:@"tt://examplepostlist" toSharedViewController:[WordPressBlogViewController class]];
 [map from:@"tt://blog/author/(initWithAuthorId:)" toViewController:[WordPressBlogViewController class]];
 [map from:@"tt://blog/category/(initWithCategoryId:)" toViewController:[WordPressBlogViewController class]];
 [map from:@"tt://blog/post/comment/(initWithPostId:)" toModalViewController:[WordPressAddCommentViewController class]];
-
+````
 
 The first line sets the path to a view controller that will list the latest posts from your blog, the second shows the posts belong to a particular author, the third from a particular category and the fourth is the modal pop up for making a comment.  The assumption here is that the list of posts from your blog will be a tab in your app hence being a shared view controller as opposed to the other two which are created and destroyed on demand.
 
